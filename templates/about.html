@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Tentang Model{% endblock %}
+{% block content %}
+<h1 class="h4 fw-bold mb-3">Tentang Model</h1>
+{% if not metrics %}
+<div class="alert alert-warning">Belum ada hasil pelatihan. Jalankan <code>python -m src.train</code>.</div>
+{% else %}
+<div class="row g-3">
+  <div class="col-md-6"><div class="card h-100"><div class="card-body">
+    <h2 class="h6 fw-semibold">Hiperparameter</h2>
+    <table class="table table-sm mb-0">
+      {% for k, v in metrics.hyperparameter.items() %}<tr><td>{{ k }}</td><td class="text-end">{{ v }}</td></tr>{% endfor %}
+    </table></div></div></div>
+  <div class="col-md-6"><div class="card h-100"><div class="card-body">
+    <h2 class="h6 fw-semibold">Evaluasi (skala asli)</h2>
+    <table class="table table-sm mb-0">
+      <thead><tr><th>Himpunan</th><th class="text-end">RMSE</th><th class="text-end">MAE</th></tr></thead>
+      {% for k, v in metrics.hasil.items() %}<tr><td>{{ k }}</td>
+        <td class="text-end">{{ '{:,.0f}'.format(v.RMSE) }}</td><td class="text-end">{{ '{:,.0f}'.format(v.MAE) }}</td></tr>{% endfor %}
+    </table>
+    <p class="small text-muted mt-2 mb-0">Baris <em>naive_uji</em> adalah pembanding sederhana (nilai bulan ini = bulan lalu).</p>
+  </div></div></div>
+</div>
+{% endif %}
+{% endblock %}

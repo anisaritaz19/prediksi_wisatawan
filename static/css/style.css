@@ -1,0 +1,9 @@
+body { background: #f4f6fb; }
+.app-nav { background: #1e3a8a; }
+.hero { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: #fff; }
+.card { border: 0; border-radius: 1rem; box-shadow: 0 2px 12px rgba(30, 58, 138, .08); }
+.stat .label { font-size: .8rem; color: #6b7280; }
+.stat .value { font-size: 1.5rem; font-weight: 700; color: #1e3a8a; }
+.stat .value.small-v { font-size: 1.05rem; }
+.chart-wrap { position: relative; height: 340px; }
+@media (max-width: 576px) { .chart-wrap { height: 260px; } .stat .value { font-size: 1.2rem; } }

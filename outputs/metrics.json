@@ -1,0 +1,64 @@
+{
+  "sumber_file": "data.csv",
+  "periode_awal": "1982-01",
+  "periode_akhir": "2026-09",
+  "eda": {
+    "count": 537.0,
+    "mean": 438071.7561142148,
+    "std": 442971.5070009424,
+    "min": 10141.0,
+    "25%": 43773.5,
+    "50%": 327165.3333333333,
+    "75%": 694731.8,
+    "max": 2254894.0,
+    "skewness": 0.987133167157221,
+    "n_bulan": 537,
+    "bulan_min": "1982-09",
+    "bulan_maks": "2026-08"
+  },
+  "split": {
+    "n_latih_jendela": 375,
+    "n_validasi_jendela": 43,
+    "n_uji_jendela": 107
+  },
+  "hyperparameter": {
+    "look_back": 12,
+    "lstm_units": 64,
+    "dropout": 0.2,
+    "epochs_maks": 200,
+    "epochs_dijalankan": 190,
+    "batch_size": 16,
+    "learning_rate": 0.001,
+    "optimizer": "Adam",
+    "loss": "MSE",
+    "patience": 20,
+    "seed": 42
+  },
+  "hasil": {
+    "latih": {
+      "RMSE": 34157.519781054296,
+      "MAE": 24378.9768546658,
+      "n": 375
+    },
+    "validasi": {
+      "RMSE": 69664.75918528122,
+      "MAE": 55233.570058139536,
+      "n": 43
+    },
+    "uji": {
+      "RMSE": 187938.50805930913,
+      "MAE": 116182.9461448598,
+      "n": 107
+    },
+    "naive_uji": {
+      "RMSE": 157215.18925247886,
+      "MAE": 87777.28722741434
+    }
+  },
+  "versi": {
+    "tensorflow": "2.13.0",
+    "numpy": "1.24.3",
+    "pandas": "2.2.3"
+  },
+  "terakhir_data": 1768549.0
+}
